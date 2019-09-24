@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ChuckNorrisTestApplication</string>
+	<string name="categories">Categories</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/categoryFragment">
+
+    <fragment android:id="@+id/categoryFragment"
+              android:name="ru.test.chucknorristestapplication.view.ui.category.CategoryFragment"
+              android:label="CategoryFragment">
+        <action android:id="@+id/action_categoryFragment_to_jokeFragment" app:destination="@id/jokeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/jokeFragment" android:name="ru.test.chucknorristestapplication.view.ui.joke.JokeFragment"
+              android:label="JokeFragment">
+        <action android:id="@+id/action_jokeFragment_to_categoryFragment" app:destination="@id/categoryFragment"/>
+    </fragment>
+</navigation>
