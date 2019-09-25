@@ -2,8 +2,8 @@ package ru.test.chucknorristestapplication.base
 
 import android.util.Log
 import retrofit2.Response
-import java.io.IOException
 import ru.test.chucknorristestapplication.service.model.Result
+import java.io.IOException
 
 /**
  * @author Bulat Motygullin bul3515@gmail.com
@@ -20,7 +20,7 @@ open class BaseRepository {
             is Result.Success ->
                 data = result.data
             is Result.Error -> {
-                Log.d("1.DataRepository", "$errorMessage & Exception - ${result.exception}")
+                Log.d("BaseRepository", "$errorMessage & Exception - ${result.exception}")
             }
         }
 
@@ -32,7 +32,7 @@ open class BaseRepository {
         val response = call.invoke()
         if(response.isSuccessful) return Result.Success(response.body()!!)
 
-        return Result.Error(IOException("Error Occurred during getting safe Api result, Custom ERROR - $errorMessage"))
+        return Result.Error(IOException("Error Occurred during getting safe Api result, ERROR - $errorMessage"))
     }
 
 }

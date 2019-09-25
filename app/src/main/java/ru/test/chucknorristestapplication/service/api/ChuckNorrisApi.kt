@@ -1,6 +1,5 @@
 package ru.test.chucknorristestapplication.service.api
 
-import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -13,9 +12,9 @@ import ru.test.chucknorristestapplication.service.model.Joke
 interface ChuckNorrisApi {
 
     @GET("/categories")
-    fun getCategories() : Deferred<Response<List<String>>>
+    suspend fun getCategories(): Response<List<String>>
 
     @GET("/random?category={category}")
-    fun getJokeByCategory(@Path("category") category:String): Deferred<Response<Joke>>
+    suspend fun getJokeByCategory(@Path("category") category: String): Response<Joke>
 
 }

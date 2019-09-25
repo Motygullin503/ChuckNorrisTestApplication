@@ -26,18 +26,8 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
 ext {
     // Sdk and tools
     minSdkVersion = 21
     targetSdkVersion = 28
-    compileSdkVersion = 28
-    buildToolsVersion = '28.0.3'
-
-    // App dependencies
-    dagger2Version = '2.16'
-    glideVersion = '4.7.1'
-    navVersion = '2.1.0'
-    retrofitVersion = '2.4.0'
-    roomVersion = '1.1.1'
 }
