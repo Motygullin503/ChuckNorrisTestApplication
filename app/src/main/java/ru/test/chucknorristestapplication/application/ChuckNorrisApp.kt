@@ -14,7 +14,7 @@ class ChuckNorrisApp: Application() {
         super.onCreate()
         app = this
         appComponent = DaggerAppComponent.builder()
-            .networkModule(NetworkModule("https://api.chucknorris.io"))
+            .networkModule(NetworkModule("https://api.chucknorris.io/jokes"))
             .build()
     }
 
