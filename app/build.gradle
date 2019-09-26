@@ -38,6 +38,7 @@ dependencies {
     def dagger2Version = '2.16'
     def glideVersion = '4.7.1'
     def kotlinCoroutineVersion = "1.0.1"
+    def lifecycle_version = "2.1.0"
     def moshiVersion="1.8.0"
     def navVersion = '2.1.0'
     def retrofitVersion = '2.6.1'
@@ -63,6 +64,8 @@ dependencies {
     //Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     //Moshi
     implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"

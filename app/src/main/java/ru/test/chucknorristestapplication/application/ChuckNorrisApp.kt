@@ -7,8 +7,20 @@ import ru.test.chucknorristestapplication.di.module.NetworkModule
 
 class ChuckNorrisApp: Application() {
 
+    init {
+        instance = this
+    }
+
+    companion object {
+        private lateinit var instance: ChuckNorrisApp
+
+        fun getInstance(): ChuckNorrisApp {
+            return instance
+        }
+    }
+
     private lateinit var app: ChuckNorrisApp
-    private var appComponent: AppComponent? = null
+    lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -18,7 +30,5 @@ class ChuckNorrisApp: Application() {
             .build()
     }
 
-    fun getInstance(): ChuckNorrisApp {
-        return app
-    }
+
 }

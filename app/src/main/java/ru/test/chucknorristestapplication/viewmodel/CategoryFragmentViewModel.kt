@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import ru.test.chucknorristestapplication.application.ChuckNorrisApp
 import ru.test.chucknorristestapplication.service.repository.CategoryRepository
 import javax.inject.Inject
 
@@ -20,6 +21,7 @@ class CategoryFragmentViewModel: ViewModel() {
     val categories: LiveData<List<String>> = _categories
 
     init {
+        ChuckNorrisApp.getInstance().appComponent.inject(this)
         update()
     }
 
