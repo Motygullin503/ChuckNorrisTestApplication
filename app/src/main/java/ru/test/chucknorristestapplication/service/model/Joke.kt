@@ -1,7 +1,6 @@
 package ru.test.chucknorristestapplication.service.model
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 
 /**
@@ -10,49 +9,18 @@ import com.google.gson.annotations.SerializedName
  */
 class Joke {
 
-    @SerializedName("icon_url")
-    @Expose
-    private var iconUrl: String? = null
-    @SerializedName("id")
-    @Expose
-    private var id: String? = null
-    @SerializedName("url")
-    @Expose
-    private var url: String? = null
-    @SerializedName("value")
-    @Expose
-    private var value: String? = null
+    @Json(name = "icon_url")
+    var iconUrl: String? = null
 
-    fun getIconUrl(): String? {
-        return iconUrl
-    }
+    @Json(name = "id")
+    var id: String? = null
 
-    fun setIconUrl(iconUrl: String) {
-        this.iconUrl = iconUrl
-    }
+    @Json(name = "url")
+    var url: String? = null
 
-    fun getId(): String? {
-        return id
-    }
+    @Json(name = "value")
+    var value: String? = null
 
-    fun setId(id: String) {
-        this.id = id
-    }
 
-    fun getUrl(): String? {
-        return url
-    }
-
-    fun setUrl(url: String) {
-        this.url = url
-    }
-
-    fun getValue(): String? {
-        return value
-    }
-
-    fun setValue(value: String) {
-        this.value = value
-    }
 
 }

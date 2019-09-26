@@ -11,10 +11,10 @@ import ru.test.chucknorristestapplication.service.model.Joke
  */
 interface ChuckNorrisApi {
 
-    @GET("/categories")
+    @GET("categories")
     suspend fun getCategories(): Response<List<String>>
 
-    @GET("/random?category={category}")
+    @GET("random?category={category}")
     suspend fun getJokeByCategory(@Path("category") category: String): Response<Joke>
 
 }

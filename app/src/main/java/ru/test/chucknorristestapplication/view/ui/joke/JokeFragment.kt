@@ -45,7 +45,7 @@ class JokeFragment : Fragment() {
     }
     private fun configureViews(joke: Joke) {
 
-        text.text = joke.getValue()
+        text.text = joke.value
 
     }
 }
