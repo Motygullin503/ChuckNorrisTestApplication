@@ -7,11 +7,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.test.chucknorristestapplication.application.ChuckNorrisApp
 import ru.test.chucknorristestapplication.service.model.Joke
-import ru.test.chucknorristestapplication.service.repository.CategoryRepository
 import ru.test.chucknorristestapplication.service.repository.JokeRepository
 import javax.inject.Inject
 
-class JokeFragmentViewModel(category: String): ViewModel() {
+class JokeFragmentViewModel(category: String) : ViewModel() {
 
     @Inject
     lateinit var jokeRepository: JokeRepository
@@ -27,7 +26,7 @@ class JokeFragmentViewModel(category: String): ViewModel() {
         getJoke(category)
     }
 
-    private fun getJoke(category: String) {
+    fun getJoke(category: String) {
         viewModelScope.launch {
             _joke.postValue(jokeRepository.getJokeByCategory(category))
         }

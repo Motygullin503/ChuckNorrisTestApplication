@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.test.chucknorristestapplication.R
+import ru.test.chucknorristestapplication.view.callback.CategoryCallback
 
 class CategoriesAdapter : RecyclerView.Adapter<CategoriesViewHolder>() {
+
+    var categoryCallback: CategoryCallback? = null
 
     var categories: List<String> = ArrayList()
         set(value) {
@@ -25,7 +28,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesViewHolder>() {
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
         val category = categories[position]
+        holder.categoryCallback = categoryCallback
         holder.bind(category)
     }
-
 }
