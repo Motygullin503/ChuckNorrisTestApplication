@@ -25,7 +25,7 @@ class JokeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     private val args: JokeFragmentArgs by navArgs()
     lateinit var category: String
     private var mViewModel: JokeFragmentViewModel? = null
-    
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
