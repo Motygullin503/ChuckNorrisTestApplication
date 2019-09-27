@@ -1,7 +1,5 @@
 package ru.test.chucknorristestapplication.service.model
 
-import com.squareup.moshi.Json
-
 
 /**
  * @author Bulat Motygullin bul3515@gmail.com
@@ -9,18 +7,15 @@ import com.squareup.moshi.Json
  */
 class Joke {
 
-    @Json(name = "icon_url")
-    var iconUrl: String? = null
+    var icon_url: String? = null
 
-    @Json(name = "id")
     var id: String? = null
 
-    @Json(name = "url")
     var url: String? = null
 
-    @Json(name = "value")
     var value: String? = null
 
+    var created_at: String? = null
 
 
 }

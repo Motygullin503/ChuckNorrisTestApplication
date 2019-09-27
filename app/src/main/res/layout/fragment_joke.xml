@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:id="@+id/swipeRefresh"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -47,7 +47,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Get Best Advertiser In YourGetYourGetYourGetYourGetYourGetYourGet Best Advertiser In YourGet Best Advertiser In YourGet Best Advertiser In Your"
+            tools:text="Get Best Advertiser In YourGetYourGetYourGetYourGetYourGetYourGet Best Advertiser In YourGet Best Advertiser In YourGet Best Advertiser In Your"
             android:textColor="@color/darkTextColor"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/image_container"
@@ -64,7 +64,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:gravity="end"
-            android:text="Sep 23"
+            tools:text="Sep 23"
             android:textColor="@color/lightTextColor"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/image_container"
@@ -74,5 +74,9 @@
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <include
+        android:id="@+id/loading"
+        layout="@layout/content_loading" />
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

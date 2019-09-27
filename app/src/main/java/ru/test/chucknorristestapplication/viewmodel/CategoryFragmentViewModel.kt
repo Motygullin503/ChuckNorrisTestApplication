@@ -25,10 +25,9 @@ class CategoryFragmentViewModel: ViewModel() {
         update()
     }
 
-    private fun update() {
+    fun update() {
         viewModelScope.launch {
             _categories.postValue(categoryRepository.getCategories())
         }
     }
-
 }

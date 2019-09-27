@@ -2,7 +2,7 @@ package ru.test.chucknorristestapplication.service.api
 
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 import ru.test.chucknorristestapplication.service.model.Joke
 
 /**
@@ -14,7 +14,7 @@ interface ChuckNorrisApi {
     @GET("categories")
     suspend fun getCategories(): Response<List<String>>
 
-    @GET("random?category={category}")
-    suspend fun getJokeByCategory(@Path("category") category: String): Response<Joke>
+    @GET("random")
+    suspend fun getJokeByCategory(@Query("category") category: String): Response<Joke>
 
 }
