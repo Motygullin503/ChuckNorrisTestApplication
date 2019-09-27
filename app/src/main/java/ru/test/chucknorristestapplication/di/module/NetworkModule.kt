@@ -6,9 +6,12 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
+import ru.test.chucknorristestapplication.service.api.ChuckNorrisApi
+import ru.test.chucknorristestapplication.service.repository.CategoryRepository
+import ru.test.chucknorristestapplication.service.repository.CategoryRepositoryImpl
+import ru.test.chucknorristestapplication.service.repository.JokeRepository
+import ru.test.chucknorristestapplication.service.repository.JokeRepositoryImpl
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -30,10 +33,27 @@ class NetworkModule(private val baseUrl: String) {
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(provideOkHttpClient())
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
         return retrofit
+    }
+
+    @Provides
+    fun provideChuckNorrisApi(
+    ): ChuckNorrisApi {
+        return providesRetrofit().create(ChuckNorrisApi::class.java)
+    }
+
+    @Provides
+    fun provideCategoryRepository(
+    ): CategoryRepository {
+        return CategoryRepositoryImpl(provideChuckNorrisApi())
+    }
+
+    @Provides
+    fun provideJokeRepository(
+    ): JokeRepository {
+        return JokeRepositoryImpl(provideChuckNorrisApi())
     }
 
 
